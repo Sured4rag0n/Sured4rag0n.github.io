@@ -6896,11 +6896,11 @@ blockquote.pullquote.right {
 /* 修改灯笼的字体 */
 
 .d-box .d1::after {
-    content: '本命蛇';
+    content: '挖洞';
 }
 
 .d-box1 .d1::after {
-    content: '心事成';
+    content: '100W';
 }
 
 .d-box1 .d1,
@@ -7076,7 +7076,7 @@ blockquote.pullquote.right {
     right: 51px;
     width: 75px;
     border-radius: 57px/89px;
-    background: url(https://cdn.jsdelivr.net/gh/sured4rag0n/PicGo-Sured4rag0n@main/%E8%9B%87.jpg) no-repeat;
+    background: url() no-repeat;
     background-position: center;
     background-size: 105px auto;
 }
