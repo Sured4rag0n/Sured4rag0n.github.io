@@ -6896,11 +6896,11 @@ blockquote.pullquote.right {
 /* 修改灯笼的字体 */
 
 .d-box .d1::after {
-    content: '挖洞';
+    content: '100W';
 }
 
 .d-box1 .d1::after {
-    content: '100W';
+    content: '挖洞';
 }
 
 .d-box1 .d1,
