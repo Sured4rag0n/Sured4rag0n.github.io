@@ -1,1 +1,1 @@
-var posts=["2023/05/29/EDUSRC证书/","2025/05/29/CVE编号/","2022/09/26/CNVD证书/","2024/05/31/攻防演练&SRC&众测&渗透测试/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
+var posts=["2022/09/26/CNVD证书/","2023/05/29/EDUSRC证书/","2025/05/29/CVE编号/","2024/05/31/攻防演练&SRC&众测&渗透测试/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
