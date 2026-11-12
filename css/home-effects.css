@@ -8,6 +8,32 @@
   will-change: background-position;
 }
 
+#page-header.full_page .home-bg-video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#page-header.full_page .home-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(.82) saturate(1.08);
+  transform: scale(1.04);
+  transition: transform .12s linear;
+  will-change: transform;
+}
+
+#page-header.full_page #site-info,
+#page-header.full_page #scroll-down,
+#page-header.full_page nav#nav {
+  z-index: 2;
+}
+
 #page-header.full_page #site-title.home-title {
   display: block;
   overflow: visible;
@@ -80,6 +106,9 @@
 @media (prefers-reduced-motion: reduce) {
   #page-header.full_page.home-parallax {
     background-size: cover !important;
+  }
+  #page-header.full_page .home-bg-video {
+    display: none;
   }
   #page-header.full_page #site-title.home-title {
     animation: none;

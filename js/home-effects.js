@@ -19,15 +19,30 @@
     var header = document.querySelector('#page-header.full_page')
     if (!header) return
 
+    var video = header.querySelector('.home-bg-video')
+
     header.classList.remove('home-parallax')
     header.style.backgroundPosition = ''
 
-    if (reduceMotion) return
+    if (reduceMotion) {
+      if (video) {
+        video.pause()
+        video.removeAttribute('autoplay')
+      }
+      return
+    }
 
     var bg = header.style.backgroundImage
-    if (!bg || bg === 'none') return
+    if (!video && (!bg || bg === 'none')) return
 
-    header.classList.add('home-parallax')
+    if (video) {
+      video.muted = true
+      video.playsInline = true
+      var playPromise = video.play()
+      if (playPromise && playPromise.catch) playPromise.catch(function () {})
+    } else {
+      header.classList.add('home-parallax')
+    }
 
     var targetX = 0
     var targetY = 0
@@ -75,7 +90,11 @@
       currentX += (targetX - currentX) * 0.08
       currentY += (targetY - currentY) * 0.08
 
-      header.style.backgroundPosition = 'calc(50% + ' + currentX.toFixed(2) + 'px) calc(50% + ' + currentY.toFixed(2) + 'px)'
+      if (video) {
+        video.style.transform = 'translate3d(' + currentX.toFixed(2) + 'px,' + currentY.toFixed(2) + 'px,0) scale(1.04)'
+      } else {
+        header.style.backgroundPosition = 'calc(50% + ' + currentX.toFixed(2) + 'px) calc(50% + ' + currentY.toFixed(2) + 'px)'
+      }
       rafId = window.requestAnimationFrame(loop)
     }
 
