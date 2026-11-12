@@ -1,0 +1,98 @@
+/* Homepage dynamic background & colorful title */
+
+#page-header.full_page.home-parallax {
+  background-attachment: scroll !important;
+  background-size: 115% 115% !important;
+  background-position: 50% 50%;
+  transition: background-position .12s linear;
+  will-change: background-position;
+}
+
+#page-header.full_page #site-title.home-title {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: initial;
+  animation: homeTitleHue 14s linear infinite;
+}
+
+#page-header.full_page #site-title.home-title .home-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(28px) rotate(8deg) scale(.92);
+  animation: homeCharIn .9s cubic-bezier(.2, .8, .2, 1) forwards;
+  animation-delay: calc(var(--i) * 70ms);
+  text-shadow: 0 0 18px currentColor, 2px 2px 4px rgba(0, 0, 0, .18);
+}
+
+#page-header.full_page #subtitle {
+  background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #ff6b6b);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: homeSubtitleGradient 8s linear infinite;
+}
+
+#page-header.full_page #site-subtitle {
+  animation: homeFadeIn 1s ease .2s both;
+}
+
+#page-header.full_page .typed-cursor {
+  background: none !important;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+@keyframes homeCharIn {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes homeTitleHue {
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes homeSubtitleGradient {
+  to {
+    background-position: 300% 0;
+  }
+}
+
+@keyframes homeFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #page-header.full_page.home-parallax {
+    background-size: cover !important;
+  }
+  #page-header.full_page #site-title.home-title {
+    animation: none;
+  }
+  #page-header.full_page #site-title.home-title .home-char {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+  #page-header.full_page #subtitle {
+    animation: none;
+  }
+  #page-header.full_page #site-subtitle {
+    animation: none;
+  }
+}
