@@ -1,4 +1,4 @@
-<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>
+
 function newYear() {
     if (!document.querySelector('#newYear')) return;
     // 新年时间戳 and 星期对象
@@ -36,7 +36,7 @@ function newYear() {
                 let m = nol(parseInt(second / 60));
                 second %= 60;
                 let s = nol(second);
-                document.querySelector('#newYear .newYear-time').innerHTML = `<span class="time">${h}:${m}:${s}</span>`;
+                document.querySelector('#newYear .newYear-time').innerHTML = `<span class="time">${h}:${m}:${s}</span></span>`;
                 // 计时
                 if (!window.newYearTimer) window.newYearTimer = setInterval(time, 1000);
             }
