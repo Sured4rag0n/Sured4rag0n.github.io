@@ -125,3 +125,14 @@
     animation: none;
   }
 }
+
+/* Footer info block alignment */
+#footer .copyright,
+#footer .footer_custom_text,
+#footer #workboard {
+  text-align: center;
+}
+
+#footer #workboard > div {
+  text-align: center;
+}
